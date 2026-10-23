@@ -1,0 +1,26 @@
+PLI Labs — dsv41-dspark-drafter-tp2-nvlink
+Copyright 2026 Proprietary Legal Intelligence LLC
+
+Original PLI Labs code, including the peer collective, is Apache-2.0.
+
+Third-party components in the code tree:
+- vllm_exl3_moe plugin wrappers: code/dspark/worker/exl3/plan.py, bank.py,
+  kernels.py, hostcopy.py and exl3_ref.py. Apache-2.0, as identified by
+  code/dspark/worker/exl3/VENDORED.md and the inspected image-source SPDX headers.
+  Licence file in this package: LICENSES/Apache-2.0.txt.
+  Image and patch lineage: HeNryous and sudoingX. No separate plugin NOTICE was
+  present in the supplied source-image copy.
+- exllamav3-derived decoding logic in code/dspark/worker/exl3/exl3_ref.py,
+  and code/dspark/worker/exl3/exllamav3_facc.patch, which modifies EXL3
+  accumulation and the extension build script. MIT, credited to turboderp.
+  Licence file in this package: LICENSES/exllamav3-MIT.txt, copied from the
+  exact extension revision identified by VENDORED.md.
+  Upstream licence file: https://github.com/turboderp-org/exllamav3/blob/master/LICENSE
+  The extension binary is an external dependency, not included here.
+
+No separate LICENSE, NOTICE or COPYING file was present under the staged code
+subtree. Applicable texts are supplied in LICENSES, with source attribution
+and SPDX notices retained in the code. Third-party material retains its original licence.
+Optional donor build tools reference external sources, not vendored donor code.
+vLLM is the external target runtime. DeepSeek supplies the model and DSpark
+architecture; this distribution includes no model files.
