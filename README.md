@@ -61,9 +61,9 @@ On 2026-10-23, two DGX Spark GB10 nodes used the x86 one-card RTX 3090 worker or
 | workload | one card, sync | two cards, sync | two cards + async process proxy |
 |---|---|---|---|
 | short × 3, step (ms) | 39.6 / 40.1 / 39.4 | 39.0 / 38.9 / 38.9 (−1.8 %) | 37.1 / 37.4 / 36.9 (**−6.3 %**) |
-| 32K × 3, step (ms) | 41.2 / 42.2 / 42.3 | 41.6 / 41.5 / 41.6 (−0.6 %) | 39.6 / 39.5 / 40.2 (**−5.2 %**) |
+| 32K × 3, step (ms) | 41.2 / 42.2 / 42.3 | 41.6 / 41.5 / 41.6 (−0.8 %) | 39.6 / 39.5 / 40.2 (**−5.2 %**) |
 | 32K, 3 concurrent, step (ms) | 75.9 / 76.1 / 76.1 | 74.9 / 75.1 / 74.8 (−1.4 %) | 72.8 / 73.5 / 73.0 (**−3.9 %**) |
-| 150K × 2, step (ms) | 41.5 / 42.2 | 40.7 / 41.4 (−1.9 %) | 39.6 / 39.8 (**−5.1 %**) |
+| 150K × 2, step (ms) | 41.5 / 42.2 | 40.7 / 41.4 (−2.0 %) | 39.6 / 39.8 (**−5.1 %**) |
 
 Worker step p50 2.55 ms, p99 3.47 ms, over 6,284 steps.
 
@@ -219,7 +219,7 @@ If you changed enablement during your own promotion, also disable the TP2 unit a
 
 The bundled `prod_tp2.sh` and systemd templates assume the original release layout. Configure their archive paths, pins and direct-link addresses for your installation. The generic [gpu_locked.sh](code/dspark/worker/run/gpu_locked.sh) accepts caller-supplied lock paths. Full maintenance-window scripts are outside this package. Keep a hold while revoking work, draining jobs and checking both cards; retain it if a process remains or a check fails.
 
-The later controlled test measured only −0.6 to −1.9 % per round for TP2 alone; the larger combined gain includes async overlap. Inserting context rows is about 0.1 ms slower on TP2 from host overhead. Both cards are dedicated to drafting while the worker runs. Do not equate reserved allocator memory with device-wide sampled memory or compare isolated worker replay directly with end-to-end token throughput.
+The later controlled test measured only −0.8 to −2.0 % per round for TP2 alone; the larger combined gain includes async overlap. Inserting context rows is about 0.1 ms slower on TP2 from host overhead. Both cards are dedicated to drafting while the worker runs. Do not equate reserved allocator memory with device-wide sampled memory or compare isolated worker replay directly with end-to-end token throughput.
 
 The allocator and stream fixes cover the reproduced sequences; they do not justify recovering a poisoned CUDA context in place. A sticky failure requires process replacement. Maintenance jobs must not daemonize or escape their ownership hold. Independent review accepted a narrow start-up race for a process without a visible CUDA context and a bounded close wait for orphaned work; the hold remains on refusal. Pair safety requires operational ownership as well as a passing numerical test.
 
