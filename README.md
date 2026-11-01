@@ -2,7 +2,7 @@
 
 Split the remote DSpark worker across two NVLinked RTX 3090s while keeping the same Spark-side client and wire contract. The worker reduces drafting time, and its strongest measured engine result combines TP2 with the async process proxy.
 
-**Hugging Face:** [Card and files](https://huggingface.co/ProprietaryLegal/dsv41-dspark-drafter-tp2-nvlink) · **Stack overview:** [GitHub](https://github.com/ProprietaryLegal/DeepSeek-V4.1-Flash-2xDGX-Spark-x86-offload) · **Collection:** [All entries](https://huggingface.co/collections/ProprietaryLegal/deepseek-v41-flash-on-2x-dgx-spark-x86-offload-6adab604a517b426ded3916e)
+**Hugging Face:** [Card and files](https://huggingface.co/ProprietaryLegal/dsv41-dspark-drafter-tp2-nvlink) · **DGX sPLIce:** [GitHub](https://github.com/ProprietaryLegal/DGX-sPLIce-DeepSeek-V4.1-Flash-2xDGX-Spark-2xRTX3090-drafter-x86-offload) · **Collection:** [All entries](https://huggingface.co/collections/ProprietaryLegal/deepseek-v41-flash-on-2x-dgx-spark-x86-offload-6adab604a517b426ded3916e)
 
 <!-- pli:blurb:start -->
 
@@ -271,7 +271,7 @@ Our code is Apache-2.0. The `vllm_exl3_moe` wrappers in [VENDORED.md](code/dspar
 - ofl-rdma-transport: [GitHub](https://github.com/ProprietaryLegal/ofl-rdma-transport) · [Hugging Face](https://huggingface.co/ProprietaryLegal/ofl-rdma-transport).
 - dsv41-native-1017-drafter-sm86: [GitHub](https://github.com/ProprietaryLegal/dsv41-native-1017-drafter-sm86) · [Hugging Face](https://huggingface.co/ProprietaryLegal/dsv41-native-1017-drafter-sm86).
 - dsv41-spark-offload-findings: [GitHub](https://github.com/ProprietaryLegal/dsv41-spark-offload-findings) · [Hugging Face](https://huggingface.co/ProprietaryLegal/dsv41-spark-offload-findings).
-- DeepSeek-V4.1-Flash-2xDGX-Spark-x86-offload: [GitHub](https://github.com/ProprietaryLegal/DeepSeek-V4.1-Flash-2xDGX-Spark-x86-offload) · [Hugging Face](https://huggingface.co/ProprietaryLegal/DeepSeek-V4.1-Flash-2xDGX-Spark-x86-offload).
+- DeepSeek-V4.1-Flash-2xDGX-Spark-x86-offload: [GitHub](https://github.com/ProprietaryLegal/DGX-sPLIce-DeepSeek-V4.1-Flash-2xDGX-Spark-2xRTX3090-drafter-x86-offload) · [Hugging Face](https://huggingface.co/ProprietaryLegal/DeepSeek-V4.1-Flash-2xDGX-Spark-x86-offload).
 - dsv41-remote-engram-rdma: [GitHub](https://github.com/ProprietaryLegal/dsv41-remote-engram-rdma) · [Hugging Face](https://huggingface.co/ProprietaryLegal/dsv41-remote-engram-rdma).
 - dsv41-longctx-bench-tools: [GitHub](https://github.com/ProprietaryLegal/dsv41-longctx-bench-tools) · [Hugging Face](https://huggingface.co/ProprietaryLegal/dsv41-longctx-bench-tools).
 - dsv41-exact-acceptance-ceiling: [GitHub](https://github.com/ProprietaryLegal/dsv41-exact-acceptance-ceiling) · [Hugging Face](https://huggingface.co/ProprietaryLegal/dsv41-exact-acceptance-ceiling).
